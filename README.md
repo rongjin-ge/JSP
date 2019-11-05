@@ -16,8 +16,15 @@ JSP是Java Server Page的缩写,是Servlet的扩展,其作用是简化网站创�
 * java表达式
 * JSP隐含对象
 
-* **JSP指令**
-JSP指令用来设置和整个JSP网页相关的属性,如网页的编码方式和脚本语言.JSP指令的一般语法形式为:  
+* **一.JSP指令**  
+  JSP指令用来设置和整个JSP网页相关的属性,如网页的编码方式和脚本语言.JSP指令的一般语法形式为:  
 <%@ 指令名 属性="值" > 
+  常用的3种指令为page、include、taglib
+* 1.page指令(略) 
+* 2.include指令  
+  <%@ include file="目标文件绝对URL或相对URL" %>  
+  Tips: include指令来包含其它文件被看作静态包含.
 
+
+  
 
