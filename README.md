@@ -25,6 +25,28 @@ JSP是Java Server Page的缩写,是Servlet的扩展,其作用是简化网站创�
   <%@ include file="目标文件绝对URL或相对URL" %>  
   Tips: include指令来包含其它文件被看作静态包含.
 
+# JSP生命周期
+  //todo
+
+# 请求转发
+  //todo
+  
+# 包含
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   
 
