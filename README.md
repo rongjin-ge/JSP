@@ -32,9 +32,13 @@ JSP是Java Server Page的缩写,是Servlet的扩展,其作用是简化网站创�
   //todo
   
 # 包含(静态包含和动态包含)
-* 1.静态包含(include指令)  
-  <%@ include file="目标文件绝对URL或相对URL" %> 
-  
+* **1. 静态包含(include指令)**  
+  * <%@ include file="目标文件绝对URL或相对URL" %> 
+  * Tomcat解析include指令流程：  
+    1.解析源文件.在解析<%@ include file="目标文件" %>时,把目标文件的所有源代码融合到源文件;
+    2.把融合后的jsp源文件翻译为Servlet源文件,再把它编译为Servlet类.
+    3.初始化与源文件对应的Servlet,再运行它的服务方法.
+    Tips：目标文件如果是JSP文件,那么该JSP文件可以访问在源文件中定义的局部变量,因为实际上,JSP源文件和JSP目标文件对应同一个Servlet.
 
 
 
