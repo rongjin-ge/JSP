@@ -44,15 +44,17 @@ JSP是Java Server Page的缩写,是Servlet的扩展,其作用是简化网站创�
 * **2. 动态包含(include标签)**  
   * <jsp:include page="目标文件绝对URL或相对URL" %>  
   * Tomcat解析include标签流程：  
-    1.解析源文件并把它翻译为Servlet源文件.<jsp:include page="目标文件" %>会被翻译为如下程序代码：  
+    1.解析源文件并把它翻译为Servlet源文件.<jsp:include page="目标文件" %>会被翻译为如下程序代码:
+    
 ```html
    org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "目标文件", out, false);
-``` 
-    2.把Servlet源文件编译成Servlet类.  
-    3.初始化Servlet,运行它的服务方法.  
-    4.Servlet服务方法调用JspRuntimeLibrary.include(...)方法,解析目标文件,把它翻译为Servlet源文件,再编译成Servlet类,接着初始化该Servlet并调用它的服务方法.  
-    5.当Servlet容器执行完JspRuntimeLibrary.include(...)方法后,继续执行源文件对应的Servlet的服务方法中的后续代码.  
-    Tips: include标签可<%=VarName %/>以包含JSP表达式,如：<jsp:include page="<%=VarName %/>" />,如果改为<%@include file="<%=VarName %/>" %>,那么Servlet容器会把字符串<%=VarName %/>的字面内容直接理解为一个目标组件的URL,而由于找不到相应的目标组件,会报错.
+```
+
+   2.把Servlet源文件编译成Servlet类.  
+   3.初始化Servlet,运行它的服务方法.  
+   4.Servlet服务方法调用JspRuntimeLibrary.include(...)方法,解析目标文件,把它翻译为Servlet源文件,再编译成Servlet类,接着初始化该Servlet并调用它的服务方法.  
+   5.当Servlet容器执行完JspRuntimeLibrary.include(...)方法后,继续执行源文件对应的Servlet的服务方法中的后续代码.  
+   Tips: include标签可以包含JSP表达式,如：<jsp:include page="<%=VarName %/>" />,如果改为<%@include file="<%=VarName %/>" %>,那么Servlet容器会把字符串<%=VarName %/>的字面内容直接理解为一个目标组件的URL,而由于找不到相应的目标组件,会报错.
 
 
 
